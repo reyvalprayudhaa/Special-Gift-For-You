@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#1a0712;color:#f9eaf0;font-family:"DM Sans",sans-serif}
+body{overflow:hidden}
+#app{height:100vh;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 22%,#762b4d 0,#45152f 38%,#190811 100%)}
+.scene{position:absolute;inset:0;display:none;overflow-y:auto;padding:30px 22px 85px}
+.scene.active{display:block;animation:fade .75s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero{min-height:calc(100vh - 80px);max-width:520px;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.page-content{max-width:540px;margin:auto;padding-bottom:40px}
+.center{text-align:center}.center-wide{max-width:540px;margin:auto;text-align:center}
+.mini{font-size:10px;letter-spacing:4px;text-transform:uppercase;opacity:.72}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",serif}
+h1{font-size:clamp(44px,13vw,68px);line-height:.9;font-weight:500;margin:20px 0}
+h2{font-size:39px;line-height:1;font-weight:500;margin:18px 0}
+h3{font-size:23px;font-weight:500}
+p{color:#efd5df;line-height:1.65}
+.sub{font-size:11px;opacity:.72}
+.signature{font-family:"Cormorant Garamond",serif;font-size:17px;color:#f3b6ca;margin:15px 0 25px}
+button{border:1px solid #ffffff2a;background:#ffffff10;color:#fff;border-radius:28px;padding:12px 23px;margin:7px;font:inherit;cursor:pointer;backdrop-filter:blur(10px)}
+button:hover{background:#ffffff20}
+.glass-card,.pin-card,.music-card,.reason-card{background:#ffffff0d;border:1px solid #ffffff1c;border-radius:18px;box-shadow:0 18px 45px #0005;backdrop-filter:blur(12px)}
+.pin-card{width:310px;padding:22px;margin:15px auto}
+#dots{display:flex;justify-content:center;gap:9px;margin:5px 0 18px}
+.dot{width:8px;height:8px;border:1px solid #f2a7c3;border-radius:50%}.dot.on{background:#f2a7c3}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.keys button{width:48px;height:48px;padding:0;margin:auto;border-radius:50%}
+.gift{width:165px;height:150px;position:relative;margin:20px auto 35px;animation:bob 2s infinite ease-in-out;filter:drop-shadow(0 25px 25px #0008)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.box{position:absolute;bottom:0;left:4px;right:4px;height:95px;background:linear-gradient(135deg,#ff73b5,#b52263);border-radius:4px}
+.lid{position:absolute;top:35px;left:0;right:0;height:32px;background:#ff91c4;border-radius:4px;z-index:3;transition:.7s}
+.gift.open .lid{transform:translateY(-75px) rotate(-6deg)}
+.ribbon-v{position:absolute;z-index:4;left:72px;top:35px;bottom:0;width:21px;background:#ffd25b}
+.ribbon-h{position:absolute;z-index:4;left:0;right:0;top:42px;height:15px;background:#ffd25b}
+.bouquet{width:270px;height:300px;position:relative;margin:0 auto}
+.flower{position:absolute;font-size:38px;z-index:3;animation:sway 3s ease-in-out infinite}
+.f1{left:32px;top:72px}.f2{left:105px;top:38px}.f3{right:25px;top:82px}.f4{left:70px;top:115px}.f5{right:65px;top:135px}.f6{left:140px;top:95px}
+@keyframes sway{50%{transform:rotate(7deg) translateY(-4px)}}
+.stem{position:absolute;width:3px;height:180px;background:#668a5c;bottom:32px;left:50%;transform-origin:bottom}.a{transform:rotate(-20deg)}.b{transform:rotate(0)}.c{transform:rotate(19deg)}
+.wrap{position:absolute;bottom:5px;left:78px;width:115px;height:72px;background:linear-gradient(135deg,#eaa6c0,#b95c80);clip-path:polygon(15% 0,85% 0,100% 100%,0 100%);border-radius:5px}
+.glass-card{padding:16px 18px;max-width:360px;margin:-25px auto 15px}
+.paper{background:#fff8fa;color:#653047;max-width:390px;margin:28px auto;padding:30px 25px 35px;box-shadow:0 22px 55px #0007;border-radius:4px;min-height:480px}
+.paper-date{text-align:center;color:#a1687d;font-size:11px;margin-bottom:25px}
+#letter{white-space:pre-line;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.58;color:#67344a}
+.center-btn{display:block;margin:15px auto}
+.polaroid{background:#fff;color:#5b2d40;max-width:310px;padding:10px 10px 25px;margin:28px auto;transform:rotate(-2deg);box-shadow:0 20px 40px #0007;text-align:center}
+.polaroid img,.photo-placeholder{width:100%;height:235px;object-fit:cover}
+.photo-placeholder{display:none;background:#e6ccd7;align-items:center;justify-content:center;color:#77465a;line-height:1.6}
+.polaroid span{font-family:"Cormorant Garamond",serif;font-size:19px;display:block;margin-top:10px}
+.timeline{border-left:1px solid #efa8c055;margin:35px 7px;padding-left:18px}
+.memory{background:#ffffff0a;border:1px solid #ffffff12;border-radius:14px;padding:14px 16px;margin:16px 0;position:relative}
+.memory:before{content:"";position:absolute;left:-25px;top:18px;width:9px;height:9px;background:#ee9abb;border-radius:50%;box-shadow:0 0 15px #ee9abb}
+.memory h3{margin:0}.memory p{font-size:12px;margin-bottom:0}
+.music-card{max-width:390px;margin:25px auto;padding:25px}
+.album{width:180px;height:180px;margin:auto;border-radius:15px;background:linear-gradient(135deg,#e58eb4,#57243e);display:flex;align-items:center;justify-content:center;font-size:65px;box-shadow:0 15px 35px #0007}
+.progress{height:4px;background:#ffffff30;margin:24px 0;overflow:hidden;border-radius:4px}.progress i{display:block;width:35%;height:100%;background:#f2abc5}
+.controls{display:flex;justify-content:center;gap:10px}.controls button{width:45px;height:45px;padding:0}.controls .play{background:#d86b9b}
+.song-list{max-width:390px;margin:15px auto}.song-list div{padding:14px 16px;border-radius:14px;background:#ffffff09;border:1px solid #ffffff10;margin:8px 0}.song-list small{display:block;color:#c993a9;font-size:10px;margin-left:26px}
+.jar{width:145px;height:220px;margin:25px auto 20px;position:relative}.jar-neck{position:absolute;top:0;left:45px;width:55px;height:35px;border:2px solid #e5a8bd77;border-bottom:0;border-radius:9px 9px 0 0}.jar-body{position:absolute;top:25px;left:0;width:145px;height:190px;border:2px solid #e5a8bd88;border-radius:15px 15px 32px 32px;background:#ffffff0b;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:8px;padding:20px 12px;box-shadow:inset 0 0 30px #fff1}.jar-body span{background:#ffd7e4;color:#77374f;padding:5px 9px;border-radius:4px;font-size:11px}
+.reason-card{max-width:370px;margin:20px auto;padding:20px;font-family:"Cormorant Garamond",serif;font-size:21px}
+.cake{font-size:60px;margin:15px}.music-btn{position:fixed;right:17px;bottom:17px;width:48px;height:48px;border-radius:50%;padding:0;background:#8f3c61;z-index:40}
+.modal{display:none;position:fixed;inset:0;background:#12040ddd;z-index:100;align-items:center;justify-content:center;padding:22px}.modal.show{display:flex}.modal-card{max-width:370px;background:#4c1733;border:1px solid #ffffff22;border-radius:20px;padding:30px 22px;text-align:center}
+.petal{position:fixed;top:-30px;z-index:20;pointer-events:none;animation:fall linear forwards}.petal span{display:block}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:.15}}
+@media(max-width:380px){h2{font-size:34px}.paper{padding:25px 20px}.bouquet{transform:scale(.9);margin-top:-10px;margin-bottom:-15px}}

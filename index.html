@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <title>A Little Gift For You ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     💗 EDIT DI SINI — SEMUA ISI PERSONAL ADA DI BAGIAN INI
+========================================================= -->
+
+<script>
+const DATA = {
+
+  nama: "My Love",
+
+  pin: "1509",
+
+  tanggal: "A little date to remember ♡",
+
+  openingTitle: "A little surprise, made just for you",
+
+  openingText: "I made this little place to keep some of the feelings, memories, and things I want you to know.",
+
+  bouquetTitle: "A Bouquet Just For You",
+
+  bouquetText: "If I could, I would give you flowers every day — but for now, let these be a little reminder of how special you are to me.",
+
+  letterTitle: "A Letter For You",
+
+  letter: `My Love,
+
+Hai pip, how's ur day?
+I miss you so much, but there's nothing i can do about it :( 
+How have you been lately? You're much happier now, huh?
+I still can't believe this is where we are now. I really never thoughtnwe'd end up like this.
+I'm sorry if I'm still bothering you. I've tired so many ways to stop feeling this way and to move on, but I just can't.
+My feeling for you are way too deep. I got so used to having you, to having us, that I became so attached to what we had.
+I still blame myself for everything, and I keep asking myself how you could forget us so easily everything we went through, all the effort we put in,
+all those days we spent together. Did you really never miss us? Never miss what we had? Never miss me?
+Have you really moved on from us? Was it because of him? Is he better than me? Is it because he's more successful while I'm at my lowest right now?
+Did you choose him because you think he can give you more than i ever could?
+I still find myself reading our old chats and going through all our conversations.
+You once told me not to leave you when I finally made it, so why did you leave me when you were the one who finally got there?
+Why did you break the promise you made to me? 
+Why did you betray everything we built together?
+Why did'nt you ever stop and think about us, about everything we went through?
+While you were doing your KKN, I kept wondering if you still loved me.
+Every single day, i'd ask you if you were still loved me so much.
+So why did suddenly change overnight? I'm honestly so disappointed by that.
+I thought you were trying for us over there, just like I was trying for us here. I thought we were both still fighting for us, even though we were in different places
+I'm always thingking about you, about how you're doing and what you're going through.
+But why don't you ever think about me too?
+Why don't you ever wonder how i'm doing?
+Have i been okay this whole time? 
+Have i been okay since that day?
+Even when your friend told me you were sick, 
+I couldn't stop worrying about you. I was looking for medicine for you, trying to figure out what you might need. 
+When they told me you wanted to buy something, I immediately asked what you wanted. 
+Those little things might not mean much to you, but I did them because my feelings for you are still so deep.
+You always told me that my feelings weren't as strong as they used to be. 
+But look at me now. Even after everything, I'm still the one who feels more. 
+I'm still the one who cares more. I'm still here, thinking about you.
+I never got the chance to ask you this, but did you like the flowers I gave you? 
+They reminded me so much of you, pink, pretty, and just as beautiful as you are.
+
+I'm still here. 
+Waiting for the day you need me again, 
+waiting to hear everything you've been wanting to tell someone the things you can't bring yourself to share with anyone but me.
+He may be there for you and he may be closer to you right now, but that doesn't mean he can be what I was to you. 
+Maybe he's just filling the space I'm leaving behind for now, because I'm not there beside you. 
+But when it comes to everything else, I still believe I'm the one who wins.
+I'm sorry about yesterday, really. 
+I hope you know I never meant to hurt you.
+
+With all my love,
+
+Ryvl ♡`,
+
+  memories: [
+
+    {
+      title: "Your First Bouquet From Me",
+      text: "Your first birthday we celebrated together, even from afar. I sent you a cake and my first bouquet for you. 🌷🎂."
+    },
+
+    {
+      title: "The Prettiest photo of you",
+      text: "My favorite photo of you. You look so pretty here, and I could never get tired of looking at this. 🥹🤍."
+    },
+
+    {
+      title: "A Journal You made for Me",
+      text: "The first journal you made for me. You somehow knew me so well, and every page felt like me. 🤍"
+    },
+
+    {
+      title: "Those Nights We Spent Watching Together",
+      text: "Watching movies with you was always so much fun. I miss those little moments. 🍿🤍."
+    }
+
+  ],
+
+  songTitle: "Star Colde",
+
+  songArtist: "Our special song",
+
+  reasons: [
+
+    "Your smile always makes my day better.",
+    "Your kindness makes the world feel softer.",
+    "You make ordinary moments feel special.",
+    "You always try your best.",
+    "Your presence alone is enough to make me smile.",
+    "Having you in my life is something I will always appreciate."
+
+  ],
+
+  finalTitle: "For You, With a little longing ♡",
+
+  finalText: "I don't know if you still think of me, but I still find myself thingking of you. So, I made this little something for you. Somewhere, I still miss us."
+
+};
+</script>
+
+
+<div id="app">
+
+  <div id="petals"></div>
+
+
+  <!-- 01 OPENING -->
+
+  <section class="scene active" id="s1">
+
+    <div class="hero">
+
+      <div class="mini">✿ with all my heart ✿</div>
+
+      <h1 id="openingTitle"></h1>
+
+      <p id="openingText"></p>
+
+      <div class="signature">
+        — With love that never runs out ♡ —
+      </div>
+
+      <button onclick="go(2)">
+        Open your gift ♡
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 02 PIN -->
+
+  <section class="scene" id="s2">
+
+    <div class="hero">
+
+      <div class="mini">✿ for you, my love ✿</div>
+
+      <h2>Enter our secret code</h2>
+
+      <div class="pin-card">
+
+        <div id="dots"></div>
+
+        <div class="keys">
+
+          <button onclick="key('1')">1</button>
+          <button onclick="key('2')">2</button>
+          <button onclick="key('3')">3</button>
+
+          <button onclick="key('4')">4</button>
+          <button onclick="key('5')">5</button>
+          <button onclick="key('6')">6</button>
+
+          <button onclick="key('7')">7</button>
+          <button onclick="key('8')">8</button>
+          <button onclick="key('9')">9</button>
+
+          <button onclick="clearPin()">×</button>
+          <button onclick="key('0')">0</button>
+          <button onclick="checkPin()">↵</button>
+
+        </div>
+
+      </div>
+
+      <p class="sub">
+        Hint: our special date ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 03 GIFT -->
+
+  <section class="scene" id="s3">
+
+    <div class="hero">
+
+      <div class="mini">
+        ✦ opening something for you ✦
+      </div>
+
+      <div class="gift" id="gift">
+
+        <div class="ribbon-v"></div>
+        <div class="ribbon-h"></div>
+
+        <div class="box"></div>
+        <div class="lid"></div>
+
+      </div>
+
+      <button onclick="openGift()">
+        Open it ♡
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 04 BOUQUET -->
+
+  <section class="scene" id="s4">
+
+    <div class="hero bouquet-scene">
+
+      <div class="mini">
+        ✿ a little gift for you ✿
+      </div>
+
+      <h2 id="bouquetTitle"></h2>
+
+      <p id="bouquetText"></p>
+
+      <div class="bouquet">
+
+        <div class="stem a"></div>
+        <div class="stem b"></div>
+        <div class="stem c"></div>
+
+        <span class="flower f1">🌷</span>
+        <span class="flower f2">🌸</span>
+        <span class="flower f3">🌻</span>
+        <span class="flower f4">🌹</span>
+        <span class="flower f5">🌼</span>
+        <span class="flower f6">🌷</span>
+
+        <div class="wrap"></div>
+
+      </div>
+
+      <div class="glass-card" id="bouquetQuote"></div>
+
+      <button onclick="go(5)">
+        Next ♡
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 05 LETTER -->
+
+  <section class="scene scroll" id="s5">
+
+    <div class="page-content">
+
+      <div class="mini center">
+        ✦ a letter for you ✦
+      </div>
+
+      <h2 class="center" id="letterTitle"></h2>
+
+      <div class="paper">
+
+        <div class="paper-date" id="date"></div>
+
+        <div id="letter"></div>
+
+      </div>
+
+      <button class="center-btn" onclick="go(6)">
+        Memories →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 06 MEMORIES -->
+
+  <section class="scene scroll" id="s6">
+
+    <div class="page-content">
+
+      <div class="mini center">
+        ✦ little moments ✦
+      </div>
+
+      <h2 class="center">
+        Our Memories
+      </h2>
+
+
+      <!-- 4 FOTO KENANGAN -->
+
+      <div class="memories-photos">
+
+
+        <!-- FOTO 1 -->
+
+        <div class="polaroid">
+
+          <img
+            src="images/foto1.jpg"
+            alt="Your First Bouquet From Me"
+          >
+
+          <span>
+            Your First Bouquet From Me
+          </span>
+
+        </div>
+
+
+        <!-- FOTO 2 -->
+
+        <div class="polaroid">
+
+          <img
+            src="images/foto2.jpg"
+            alt="The Prettiest Photo of You"
+          >
+
+          <span>
+            The Prettiest Photo of You
+          </span>
+
+        </div>
+
+
+        <!-- FOTO 3 -->
+
+        <div class="polaroid">
+
+          <img
+            src="images/foto3.jpg"
+            alt="A Journal You Made for Me"
+          >
+
+          <span>
+            A Journal You Made for Me
+          </span>
+
+        </div>
+
+
+        <!-- FOTO 4 -->
+
+        <div class="polaroid">
+
+          <img
+            src="images/foto4.jpg"
+            alt="Those Nights We Spent Watching Together"
+          >
+
+          <span>
+            Those Nights We Spent Watching Together
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- CERITA / TIMELINE -->
+
+      <div class="timeline" id="timeline"></div>
+
+
+      <button class="center-btn" onclick="go(7)">
+        Our Song ♪
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 07 MUSIC -->
+
+  <section class="scene scroll" id="s7">
+
+    <div class="page-content">
+
+      <div class="mini center">
+        ✦ a song for us ✦
+      </div>
+
+      <h2 class="center">
+        Our Songs
+      </h2>
+
+
+      <!-- PEMUTAR LAGU -->
+
+      <div class="music-card">
+
+        <div class="album">
+          ♫
+        </div>
+
+        <h3 id="songTitle">
+          Our First Song
+        </h3>
+
+        <p id="songArtist">
+          A song that reminds me of you ♡
+        </p>
+
+        <div class="progress">
+          <i></i>
+        </div>
+
+        <div class="controls">
+
+          <button onclick="previousSong()">
+            ◀️
+          </button>
+
+          <button
+            class="play"
+            id="playButton"
+            onclick="toggleMusic()"
+          >
+            ▶️
+          </button>
+
+          <button onclick="nextSong()">
+            ▶️
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- DAFTAR 2 LAGU -->
+
+      <div class="song-list">
+
+
+        <!-- LAGU 1 -->
+
+        <div
+          class="song-item"
+          onclick="selectSong(0)"
+        >
+
+          🎵
+
+          <span>
+
+            <b id="song1Title">
+              First song
+            </b>
+
+            <small id="song1Artist">
+              Our special song ♡
+            </small>
+
+          </span>
+
+        </div>
+
+
+        <!-- LAGU 2 -->
+
+        <div
+          class="song-item"
+          onclick="selectSong(1)"
+        >
+
+          🎵
+
+          <span>
+
+            <b id="song2Title">
+              Second song
+            </b>
+
+            <small id="song2Artist">
+              Another song for you ♡
+            </small>
+
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="sub center">
+
+        The music we play
+
+        <b>Star - Colde</b>
+        and
+        <b> Drowning - Backsteert </b>.
+      </p>
+
+
+      <button
+        class="center-btn"
+        onclick="go(8)"
+      > Reasons From My Heart →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- AUDIO PLAYER -->
+
+  <audio id="audio"></audio>
+
+
+  <!-- 08 REASONS -->
+
+  <section class="scene scroll" id="s8">
+
+    <div class="page-content center-wide">
+
+      <div class="mini">
+        ✦ from my heart to yours ✦
+      </div>
+
+      <h2>
+        Little Reasons I Love You
+      </h2>
+
+      <p class="sub">
+        Pick a little note from the jar ♡
+      </p>
+
+
+      <div class="jar" id="jar">
+
+        <div class="jar-neck"></div>
+
+        <div class="jar-body">
+
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="reason-card"
+        id="reason"
+      >
+        Your presence alone is enough to make me smile. 💗
+      </div>
+
+
+      <button onclick="pickReason()">
+        Shake the jar ♡
+      </button>
+
+      <button onclick="go(9)">
+        One last thing...
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- 09 FINAL -->
+
+  <section class="scene" id="s9">
+
+    <div class="hero">
+
+      <div class="mini">
+        ✿ from my heart ✿
+      </div>
+
+      <div class="cake">
+        💗
+      </div>
+
+      <h1 id="finalTitle"></h1>
+
+      <p id="finalText"></p>
+
+      <button onclick="showFinal()">
+        Read one last message ♡
+      </button>
+
+      <div class="signature">
+        — With love that never runs out ♡ —
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TOMBOL MUSIK -->
+
+  <button
+    class="music-btn"
+    onclick="toggleMusic()"
+  >
+    ♫
+  </button>
+
+
+  <!-- FINAL MODAL -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
+
+    <div class="modal-card">
+
+      <div class="cake">
+        💗
+      </div>
+
+      <h2>
+        For You, Always ♡
+      </h2>
+
+      <p>
+        No matter where life takes us, I hope you always remember how loved, appreciated, and special you are to me.
+      </p>
+
+      <div class="serif">
+        I love you, always. ♡
+      </div>
+
+      <button onclick="closeFinal()">
+        Close ×
+      </button>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
